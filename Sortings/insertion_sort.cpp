@@ -3,7 +3,16 @@
 using namespace std;
 
 vector<int> insertion_sort(vector<int> &inp){
-    
+    for(int i=1;i<inp.size();i++){
+        int hole = inp[i];
+        int j=i-1;
+        while(j>=0 && inp[j]>hole){
+            inp[j+1]=inp[j];
+            j--;
+        }
+        inp[j+1]=hole;
+    }
+    return inp;
 }
 
 int main(){
