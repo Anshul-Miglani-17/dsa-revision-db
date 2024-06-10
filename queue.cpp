@@ -49,6 +49,10 @@ class queue_anshul{
                 cout<<"queue is NOT empty"<<endl;
             }
         }
+        ~queue_anshul(){
+            cout<<"queue of size "<<size<<" is released"<<endl;
+            delete[] arr;
+        }
 };
 
 int main(){
@@ -70,10 +74,10 @@ int main(){
     q_obj->top();
     q_obj->pop();
     q_obj->top();
+    delete q_obj;
 
     return 0;
 }
-
 
 // queue of 5 size is initialised
 // 10 is pushed
@@ -93,3 +97,4 @@ int main(){
 // 68 is the front value of queue
 // 68 is the popped value of queue
 // 69 is the front value of queue
+// queue of size 5 is released
