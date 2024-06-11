@@ -83,19 +83,20 @@ int main(){
 // queue of 5 size is initialised
 // 10 is pushed
 // 3 is pushed
+// 6 is pushed
+// 86 is pushed
+// 54 is pushed
+// queue is filled, pop elements to inert new
 // 10 is the popped value of queue
-// 33 is pushed
-// queue is NOT empty
-// 3 is the front value of queue
 // 3 is the popped value of queue
-// 33 is the popped value of queue
+// 333 is pushed
+// 6 is the front value of queue
+// 6 is the popped value of queue
+// 86 is the front value of queue
+// 86 is the popped value of queue
+// 54 is the popped value of queue
+// 333 is the popped value of queue
 // NO elements in queue
-// NO elements in queue
-// queue is EMPTY
-// 68 is pushed
-// 68 is the front value of queue
 // 69 is pushed
-// 68 is the front value of queue
-// 68 is the popped value of queue
 // 69 is the front value of queue
 // queue of size 5 is released
