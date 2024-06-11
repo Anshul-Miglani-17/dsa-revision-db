@@ -14,16 +14,16 @@ class queue_anshul{
             arr = new int[n];
             insert_var = 0;
             takeout_var=0;
-            size=n;
+            size=n+1;
         }
         void push(int x){
-            if(insert_var>=size){
+            if( (insert_var+1) % size == takeout_var){
                 cout<<"queue is filled, pop elements to inert new"<<endl;
             }
             else{
                 cout<<x<<" is pushed"<<endl;
                 arr[insert_var] = x;
-                insert_var++;
+                insert_var = (insert_var + 1) % size;
             }
         }
         void top(){
@@ -39,7 +39,7 @@ class queue_anshul{
                 return;
             }
             cout<<arr[takeout_var]<<" is the popped value of queue"<<endl;
-            takeout_var++;
+            takeout_var = (takeout_var+1)%size;
         }
         void isempty(){
             if(insert_var==takeout_var){
@@ -50,7 +50,7 @@ class queue_anshul{
             }
         }
         ~queue_anshul(){
-            cout<<"queue of size "<<size<<" is released"<<endl;
+            cout<<"queue of size "<<size-1<<" is released"<<endl;
             delete[] arr;
         }
 };
@@ -59,20 +59,21 @@ int main(){
     queue_anshul *q_obj=new queue_anshul(5);
     q_obj->push(10);
     q_obj->push(3);
+    q_obj->push(6);
+    q_obj->push(86);
+    q_obj->push(54);
+    q_obj->push(333);
     q_obj->pop();
-    q_obj->push(33);
-    q_obj->isempty();
+    q_obj->pop();
+    q_obj->push(333);
+    q_obj->top();
+    q_obj->pop();
     q_obj->top();
     q_obj->pop();
     q_obj->pop();
-    q_obj->top();
     q_obj->pop();
-    q_obj->isempty();
-    q_obj->push(68);
-    q_obj->top();
+    q_obj->pop();
     q_obj->push(69);
-    q_obj->top();
-    q_obj->pop();
     q_obj->top();
     delete q_obj;
 
